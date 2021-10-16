@@ -8,26 +8,29 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+    background-color: thistle;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .container{
-    /* display: grid;
-    grid-template-areas: "slider slider"
-                        ". pages"; */
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
     width: 80%;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 40px auto;
 }
 .slider{
     display: flex;
     justify-content: center;
-    align-self: center;
-    justify-self: center;
+    /* align-self: center; */
+
     width: 100%;
     height: auto;
     overflow: hidden;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     
 }
 /* .slide::after{
@@ -38,7 +41,7 @@ html{
 .slider-content{
     /* overflow-x: scroll; */
   
-    max-width: 600px;
+    /* max-width: 600px; */
     display: flex;
     overflow: hidden;
     gap: 30px;
@@ -47,38 +50,47 @@ html{
     scroll-behavior: smooth;
 }
 .slide{
-
+    /* max-width: 600px; */
     object-fit: scale-down;
+   
+    /* max-height: 500px; */
 }
-
-
+img{
+    border-radius: 50px;
+    
+}
 .slide-image{
-
     width: 100%;
-    height: 100%;
-    grid-area: slider;
 }
-
-
+figcaption{
+    margin-top: 30px;
+}
+.pagination-container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+}
 .pagination{
+    width: 50%;
+    height: 10vh;
     display: flex;
-    width: 30%;
-    justify-content: space-between;
-    margin-top: -20px;
-    margin-left: -30px;
-    grid-area: pages;
-    justify-self: end;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -40px;
+    
 }
+
 a::before{
+    content: "";
     display: block;
-    content: " ";
     width: 20px;
     height: 20px;
     background-color: yellowgreen;
     margin-right: 20px;
 }
-/* 
-.pagination::before{
+
+/* .pagination::before{
     margin-left: -300px;
     content: "";
     width: 300px;
