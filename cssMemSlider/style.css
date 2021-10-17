@@ -168,7 +168,10 @@ img{
     
 }
 
-@media  screen and (max-width:320px) {
+
+
+
+@media  screen and (max-width:420px) {
     .slider{
         max-width: 300px;
         justify-content: center;
@@ -210,4 +213,4 @@ img{
         margin-left: 0;
     }
         
-    }
+}
