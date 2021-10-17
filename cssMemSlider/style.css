@@ -1,0 +1,216 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: thistle;
+   
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh auto;
+}
+.slider{
+    /* position: relative; */
+    max-width: 1000px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.slider-content{
+    display: flex;
+   
+    width: 100%;
+    scroll-behavior: smooth;
+    margin-bottom: 30px;
+}
+
+
+.text-slider{
+    max-width: 200px;
+    overflow: hidden;
+
+}
+.text-content{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+.message{
+    width: 100%;
+    white-space: nowrap;
+}
+
+.pagination-container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+height: 1.8em;
+}
+
+input{
+    display: none;
+}
+.dots{
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.dots:hover{
+    
+    border-color: tomato;
+}
+
+
+.dots::before{
+    display: block;
+    content: " ";
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+#slide-1:checked ~.slider-content{
+    transform: translateX(0);
+    transition: transform 0.5s;
+}
+#slide-2:checked ~.slider-content{
+    transform: translateX(-1000px);
+    transition: transform 0.5s;
+}
+#slide-3:checked ~.slider-content{
+    transform: translateX(-2000px);
+    transition: transform 0.5s;
+}
+#slide-4:checked ~.slider-content{
+    transform: translateX(-3000px);
+    transition: transform 0.5s;
+}
+
+#slide-1:checked ~ .text-slider .text-content{
+    transform: translateX(0);
+    transition: transform 0.5s;
+}
+#slide-2:checked ~.text-slider .text-content{
+    transform: translateX(-230px);
+    transition: transform 0.5s;
+}
+#slide-3:checked ~.text-slider .text-content{
+    transform: translateX(-460px);
+    transition: transform 0.5s;
+}
+#slide-4:checked ~.text-slider .text-content{
+    transform: translateX(-690px);
+    transition: transform 0.5s;
+}
+
+
+#slide-1:checked ~.pagination-container .dot1,
+#slide-2:checked ~.pagination-container .dot2,
+#slide-3:checked ~.pagination-container .dot3,
+#slide-4:checked ~.pagination-container .dot4
+{
+    background-color: tomato;
+}
+
+#slide-1:checked ~.pagination-container .dot1:hover,
+#slide-2:checked ~.pagination-container .dot2:hover,
+#slide-3:checked ~.pagination-container .dot3:hover,
+#slide-4:checked ~.pagination-container .dot4:hover
+{
+    border-color: tomato;
+}
+
+@media  screen and (max-width:1024px) {
+.slider{
+    max-width: 600px;
+}
+img{
+    max-width: 600px;
+    height: auto;
+}
+#slide-1:checked ~.slider-content{
+    transform: translateX(0);
+    transition: transform 0.5s;
+}
+#slide-2:checked ~.slider-content{
+    transform: translateX(-600px);
+    transition: transform 0.5s;
+}
+#slide-3:checked ~.slider-content{
+    transform: translateX(-1200px);
+    transition: transform 0.5s;
+}
+#slide-4:checked ~.slider-content{
+    transform: translateX(-1800px);
+    transition: transform 0.5s;
+}
+
+    
+}
+
+
+
+
+@media  screen and (max-width:420px) {
+    .slider{
+        max-width: 300px;
+        justify-content: center;
+    }
+    img{
+        width: 300px;
+        height: auto;
+    }
+    #slide-1:checked ~.slider-content{
+        transform: translateX(0);
+        transition: transform 0.5s;
+    }
+    #slide-2:checked ~.slider-content{
+        transform: translateX(-300px);
+        transition: transform 0.5s;
+    }
+    #slide-3:checked ~.slider-content{
+        transform: translateX(-600px);
+        transition: transform 0.5s;
+    }
+    #slide-4:checked ~.slider-content{
+        transform: translateX(-900px);
+        transition: transform 0.5s;
+    }
+    .text-slider{
+        transform: translateY(25px);
+    }
+   
+
+    .pagination-container{
+        transform: translateY(-30px);
+    }
+
+    .dots{
+        margin-left: 30px;
+        margin-right: 0;
+    }
+    .dots:first-child{
+        margin-left: 0;
+    }
+        
+}
